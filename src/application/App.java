@@ -22,20 +22,20 @@ public class App {
 				UI.clearScreen();
 				UI.printMatch(chessMatch, captured);
 				System.out.println();
-				
+
 				System.out.print("Source: ");
-				ChessPosition source = UI.readChessPosition(sc);				
+				ChessPosition source = UI.readChessPosition(sc);
 				boolean[][] possibleMoves = chessMatch.possibleMoves(source);
 				UI.clearScreen();
 				UI.printBoard(chessMatch.getPieces(), possibleMoves);
 				System.out.println();
-				
+
 				System.out.print("Target: ");
 				ChessPosition target = UI.readChessPosition(sc);
 				System.out.println();
-				
+
 				ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
-				if(capturedPiece != null) {
+				if (capturedPiece != null) {
 					captured.add(capturedPiece);
 				}
 			} catch (ChessException e) {
