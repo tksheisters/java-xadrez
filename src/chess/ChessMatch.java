@@ -149,6 +149,25 @@ public class ChessMatch {
 			piecesOnTheBoard.remove(capturedPiece);
 			capturedPieces.add(capturedPiece);
 		}
+
+		// roque direita
+		if (p instanceof Rei && target.getColumn() == source.getColumn() + 2) {
+			Position sourceT = new Position(source.getRow(), source.getColumn() + 3);
+			Position targetT = new Position(source.getRow(), source.getColumn() + 1);
+			ChessPiece torre = (ChessPiece) board.removePiece(sourceT);
+			board.placePiece(torre, targetT);
+			torre.increaseMoveCount();
+		}
+
+		// roque esquerda
+		if (p instanceof Rei && target.getColumn() == source.getColumn() - 2) {
+			Position sourceT = new Position(source.getRow(), source.getColumn() - 4);
+			Position targetT = new Position(source.getRow(), source.getColumn() - 1);
+			ChessPiece torre = (ChessPiece) board.removePiece(sourceT);
+			board.placePiece(torre, targetT);
+			torre.increaseMoveCount();
+		}
+
 		return capturedPiece;
 	}
 
@@ -161,6 +180,24 @@ public class ChessMatch {
 			board.placePiece(capturedPiece, target);
 			capturedPieces.remove(capturedPiece);
 			piecesOnTheBoard.add(capturedPiece);
+		}
+
+		// roque direita
+		if (p instanceof Rei && target.getColumn() == source.getColumn() + 2) {
+			Position sourceT = new Position(source.getRow(), source.getColumn() + 3);
+			Position targetT = new Position(source.getRow(), source.getColumn() + 1);
+			ChessPiece torre = (ChessPiece) board.removePiece(targetT);
+			board.placePiece(torre, sourceT);
+			torre.decreaseMoveCount();
+		}
+
+		// roque esquerda
+		if (p instanceof Rei && target.getColumn() == source.getColumn() - 2) {
+			Position sourceT = new Position(source.getRow(), source.getColumn() - 4);
+			Position targetT = new Position(source.getRow(), source.getColumn() - 1);
+			ChessPiece torre = (ChessPiece) board.removePiece(targetT);
+			board.placePiece(torre, sourceT);
+			torre.decreaseMoveCount();
 		}
 	}
 
