@@ -7,7 +7,10 @@ import java.util.stream.Collectors;
 import boardGame.Board;
 import boardGame.Piece;
 import boardGame.Position;
+import chess.pieces.Bispo;
+import chess.pieces.Cavalo;
 import chess.pieces.Peao;
+import chess.pieces.Rainha;
 import chess.pieces.Rei;
 import chess.pieces.Torre;
 
@@ -192,14 +195,19 @@ public class ChessMatch {
 		placeNewPiece('a', 1, new Torre(board, Color.WHITE));
 		placeNewPiece('h', 1, new Torre(board, Color.WHITE));
 		placeNewPiece('d', 1, new Rei(board, Color.WHITE));
-		placeNewPiece('a', 2, new Peao(board, Color.WHITE));
+		/*placeNewPiece('a', 2, new Peao(board, Color.WHITE));
 		placeNewPiece('b', 2, new Peao(board, Color.WHITE));
 		placeNewPiece('c', 2, new Peao(board, Color.WHITE));
 		placeNewPiece('d', 2, new Peao(board, Color.WHITE));
 		placeNewPiece('e', 2, new Peao(board, Color.WHITE));
 		placeNewPiece('f', 2, new Peao(board, Color.WHITE));
 		placeNewPiece('g', 2, new Peao(board, Color.WHITE));
-		placeNewPiece('h', 2, new Peao(board, Color.WHITE));
+		placeNewPiece('h', 2, new Peao(board, Color.WHITE));*/
+		placeNewPiece('c', 1, new Bispo(board, Color.WHITE));
+		placeNewPiece('f', 1, new Bispo(board, Color.WHITE));
+		placeNewPiece('e', 1, new Rainha(board, Color.WHITE));
+		placeNewPiece('b', 1, new Cavalo(board, Color.WHITE));
+		placeNewPiece('g', 1, new Cavalo(board, Color.WHITE));
 
 		placeNewPiece('a', 8, new Torre(board, Color.BLACK));
 		placeNewPiece('h', 8, new Torre(board, Color.BLACK));
@@ -212,5 +220,11 @@ public class ChessMatch {
 		placeNewPiece('f', 7, new Peao(board, Color.BLACK));
 		placeNewPiece('g', 7, new Peao(board, Color.BLACK));
 		placeNewPiece('h', 7, new Peao(board, Color.BLACK));
+		placeNewPiece('c', 8, new Bispo(board, Color.BLACK));
+		placeNewPiece('f', 8, new Bispo(board, Color.BLACK));
+		placeNewPiece('e', 8, new Rainha(board, Color.BLACK));
+		placeNewPiece('b', 8, new Cavalo(board, Color.BLACK));
+		placeNewPiece('g', 8, new Cavalo(board, Color.BLACK));
+
 	}
 }
