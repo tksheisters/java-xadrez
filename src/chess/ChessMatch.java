@@ -141,7 +141,7 @@ public class ChessMatch {
 	}
 
 	private Piece makeMove(Position source, Position target) {
-		ChessPiece p = (ChessPiece)board.removePiece(source);
+		ChessPiece p = (ChessPiece) board.removePiece(source);
 		p.increaseMoveCount();
 		Piece capturedPiece = board.removePiece(target);
 		board.placePiece(p, target);
@@ -153,7 +153,7 @@ public class ChessMatch {
 	}
 
 	private void undoMove(Position source, Position target, Piece capturedPiece) {
-		ChessPiece p = (ChessPiece)board.removePiece(target);
+		ChessPiece p = (ChessPiece) board.removePiece(target);
 		p.decreaseMoveCount();
 		board.placePiece(p, source);
 
@@ -194,24 +194,24 @@ public class ChessMatch {
 	private void initialSetup() {
 		placeNewPiece('a', 1, new Torre(board, Color.WHITE));
 		placeNewPiece('h', 1, new Torre(board, Color.WHITE));
-		placeNewPiece('d', 1, new Rei(board, Color.WHITE));
-		/*placeNewPiece('a', 2, new Peao(board, Color.WHITE));
+		placeNewPiece('e', 1, new Rei(board, Color.WHITE, this));
+		placeNewPiece('a', 2, new Peao(board, Color.WHITE));
 		placeNewPiece('b', 2, new Peao(board, Color.WHITE));
 		placeNewPiece('c', 2, new Peao(board, Color.WHITE));
 		placeNewPiece('d', 2, new Peao(board, Color.WHITE));
 		placeNewPiece('e', 2, new Peao(board, Color.WHITE));
 		placeNewPiece('f', 2, new Peao(board, Color.WHITE));
 		placeNewPiece('g', 2, new Peao(board, Color.WHITE));
-		placeNewPiece('h', 2, new Peao(board, Color.WHITE));*/
+		placeNewPiece('h', 2, new Peao(board, Color.WHITE));
 		placeNewPiece('c', 1, new Bispo(board, Color.WHITE));
 		placeNewPiece('f', 1, new Bispo(board, Color.WHITE));
-		placeNewPiece('e', 1, new Rainha(board, Color.WHITE));
+		placeNewPiece('d', 1, new Rainha(board, Color.WHITE));
 		placeNewPiece('b', 1, new Cavalo(board, Color.WHITE));
 		placeNewPiece('g', 1, new Cavalo(board, Color.WHITE));
 
 		placeNewPiece('a', 8, new Torre(board, Color.BLACK));
 		placeNewPiece('h', 8, new Torre(board, Color.BLACK));
-		placeNewPiece('d', 8, new Rei(board, Color.BLACK));
+		placeNewPiece('e', 8, new Rei(board, Color.BLACK, this));
 		placeNewPiece('a', 7, new Peao(board, Color.BLACK));
 		placeNewPiece('b', 7, new Peao(board, Color.BLACK));
 		placeNewPiece('c', 7, new Peao(board, Color.BLACK));
@@ -222,7 +222,7 @@ public class ChessMatch {
 		placeNewPiece('h', 7, new Peao(board, Color.BLACK));
 		placeNewPiece('c', 8, new Bispo(board, Color.BLACK));
 		placeNewPiece('f', 8, new Bispo(board, Color.BLACK));
-		placeNewPiece('e', 8, new Rainha(board, Color.BLACK));
+		placeNewPiece('d', 8, new Rainha(board, Color.BLACK));
 		placeNewPiece('b', 8, new Cavalo(board, Color.BLACK));
 		placeNewPiece('g', 8, new Cavalo(board, Color.BLACK));
 
