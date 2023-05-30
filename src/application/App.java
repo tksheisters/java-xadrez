@@ -38,9 +38,14 @@ public class App {
 				if (capturedPiece != null) {
 					captured.add(capturedPiece);
 				}
-				if(chessMatch.getPromoted() != null) {
+				if (chessMatch.getPromoted() != null) {
 					System.out.print("Enter piece for promotion (B/C/T/Q): ");
 					String type = sc.nextLine().toUpperCase();
+					while (!type.equals("B") && !type.equals("C") && !type.equals("T") && !type.equals("Q")) {
+						System.out.print(""
+								+ "Enter piece for promotion (B/C/T/Q): ");
+						type = sc.nextLine().toUpperCase();
+					}
 					chessMatch.replacePromotedPiece(type);
 				}
 			} catch (ChessException e) {
